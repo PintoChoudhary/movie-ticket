@@ -22,86 +22,94 @@ const LoginPage = () => {
     <>
       <Navbar />
       <div className="container mt-5">
-        <h1>Login</h1>
-        <p>
-          New user?{' '}
-          <Link to="/register" className="link-primary">
-            Register here
-          </Link>
-        </p>
-        <Formik
-          initialValues={{
-            email: '',
-            password: '',
-          }}
-          validationSchema={Yup.object({
-            email: Yup.string()
-              .email('Invalid email address')
-              .required('Email is required'),
-            password: Yup.string().required('Password is required'),
-          })}
-          onSubmit={(values, { setSubmitting }) => {
-            axios
-              .post(`http://127.0.0.1:8000/api/login/`, values)
-              .then((response) => {
-                setRequestResponse({
-                  textMessage: 'Login successful',
-                  alertClass: 'alert alert-success',
-                });
-                localStorage.setItem('token', response.data.access);
-                setIsLoggedIn(true);
-                setSubmitting(false);
-              })
-              .catch((error) => {
-                setRequestResponse({
-                  textMessage: 'Invalid email or password',
-                  alertClass: 'alert alert-danger',
-                });
-                setSubmitting(false);
-              });
-          }}
-        >
-          {({ isSubmitting }) => (
-            <Form>
-              <div className="mb-3">
-                <label htmlFor="email" className="form-label">
-                  Email
-                </label>
-                <Field
-                  type="email"
-                  className="form-control"
-                  id="email"
-                  name="email"
-                />
-                <ErrorMessage name="email" component="div" className="error-message text-danger" />
+        <div className="row justify-content-center">
+          <div className="col-md-6">
+            <div className="card">
+              <div className="card-body">
+                <h2 className="card-title text-center mb-4">Login</h2>
+                <p className="text-center">
+                  New user?{' '}
+                  <Link to="/register" className="link-primary">
+                    Register here
+                  </Link>
+                </p>
+                <Formik
+                  initialValues={{
+                    email: '',
+                    password: '',
+                  }}
+                  validationSchema={Yup.object({
+                    email: Yup.string()
+                      .email('Invalid email address')
+                      .required('Email is required'),
+                    password: Yup.string().required('Password is required'),
+                  })}
+                  onSubmit={(values, { setSubmitting }) => {
+                    axios
+                      .post(`http://127.0.0.1:8000/api/login/`, values)
+                      .then((response) => {
+                        setRequestResponse({
+                          textMessage: 'Login successful',
+                          alertClass: 'alert alert-success',
+                        });
+                        localStorage.setItem('token', response.data.access);
+                        setIsLoggedIn(true);
+                        setSubmitting(false);
+                      })
+                      .catch((error) => {
+                        setRequestResponse({
+                          textMessage: 'Invalid email or password',
+                          alertClass: 'alert alert-danger',
+                        });
+                        setSubmitting(false);
+                      });
+                  }}
+                >
+                  {({ isSubmitting }) => (
+                    <Form>
+                      <div className="mb-3">
+                        <label htmlFor="email" className="form-label">
+                          Email
+                        </label>
+                        <Field
+                          type="email"
+                          className="form-control"
+                          id="email"
+                          name="email"
+                        />
+                        <ErrorMessage name="email" component="div" className="error-message text-danger" />
+                      </div>
+                      <div className="mb-3">
+                        <label htmlFor="password" className="form-label">
+                          Password
+                        </label>
+                        <Field
+                          type="password"
+                          className="form-control"
+                          id="password"
+                          name="password"
+                        />
+                        <ErrorMessage name="password" component="div" className="error-message text-danger" />
+                      </div>
+                      {requestResponse.textMessage && (
+                        <div className={requestResponse.alertClass} role="alert">
+                          {requestResponse.textMessage}
+                        </div>
+                      )}
+                      <button
+                        type="submit"
+                        className="btn btn-primary btn-block"
+                        disabled={isSubmitting}
+                      >
+                        {isSubmitting ? 'Logging in...' : 'Login'}
+                      </button>
+                    </Form>
+                  )}
+                </Formik>
               </div>
-              <div className="mb-3">
-                <label htmlFor="password" className="form-label">
-                  Password
-                </label>
-                <Field
-                  type="password"
-                  className="form-control"
-                  id="password"
-                  name="password"
-                />
-                <ErrorMessage name="password" component="div" className="error-message text-danger" />
-              </div>
-              {requestResponse.textMessage && (
-                <div className={requestResponse.alertClass} role="alert">
-                  {requestResponse.textMessage}
-                </div>
-              )}
-              <button
-                type="submit"
-                className="btn btn-primary"
-                disabled={isSubmitting}
-              >
-                {isSubmitting ? 'Logging in...' : 'Login'}
-              </button>
-            </Form>
-          )}
-        </Formik>
+            </div>
+          </div>
+        </div>
       </div>
       <Footer />
     </>
