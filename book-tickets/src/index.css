@@ -1,0 +1,10 @@
+body {
+  font-family: 'Roboto', sans-serif; /* Use Roboto font */
+  background-color: #4b4a4ad6; /* Light grey background color */
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}

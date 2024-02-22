@@ -1,0 +1,124 @@
+.book-seat-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .screen {
+    background-color: #000000;
+    width: 100%;
+    max-width: 800px; 
+    height: 35vh;   
+    color: #ffffff;
+    padding: 5px;
+    font-size: 1.2rem;
+    border: 5px solid #555; 
+    border-radius: 10px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;  
+    margin: 20px auto; 
+    transform: rotateX(45deg);
+
+  }
+  
+  .screen-info {
+    margin-bottom: 10px;
+  }
+  
+  .seat-map {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  
+  .seat-row {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    margin-bottom: 5px;
+  }
+  
+  .row-label {
+    width: 30px; 
+    font-size: 1.2rem; 
+  }
+  
+  .seat {
+    width: 30px;
+    height: 25px;
+    background-color: #0000000b;
+    border: 1px solid #888;
+    margin: 0 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  .booked {
+    background-color: #001be3; 
+    cursor: not-allowed; 
+  }
+  .selected {
+    background-color: #37ff00;
+  }
+  
+  .ticket-summary {
+    background-color: #00000087;
+    padding: 20px;
+    border: 1px solid #5f541f;
+    border-radius: 5px;
+    margin-top: 5px;
+    color: #fff;
+  }
+  
+  .ticket-summary h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  
+  .ticket-summary p {
+    margin: 5px 0;
+  }
+  
+  .btn-primary {
+    background-color: #929b40;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }
+  .showcase .seat:not(.occupied):hover {
+    cursor: default;
+    transform: scale(1);
+  }
+  
+  .showcase {
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #777;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .showcase li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+  }
+  
+  .showcase li small {
+    margin-left: 10px;
+  }
+  
