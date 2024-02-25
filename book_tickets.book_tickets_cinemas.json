@@ -1,0 +1,85 @@
+[{
+  "_id": {
+    "$oid": "65d32aa857f193b0c59e8ed5"
+  },
+  "cinema_id": 1,
+  "cinema_name": "INOX Odeon Connaught Place",
+  "address": "Delhi Odeon 2nd Floor Odeon Cinema Complex D-Block Connaught Place",
+  "address2": "",
+  "city": "New Delhi",
+  "state": "DL",
+  "county": "National Capital Territory",
+  "postcode": 110001,
+  "lat": 28.6339,
+  "lng": 77.220901,
+  "distance": 1.5243071921353,
+  "logo_url": "https://assets.movieglu.com/chain_logos/in/UK-1710-sq.jpg"
+},
+{
+  "_id": {
+    "$oid": "65d32aa857f193b0c59e8ed6"
+  },
+  "cinema_id": 2,
+  "cinema_name": "Delite Cinema / Diamond - Delhi",
+  "address": "4/1 Asaf Ali Road - Darya Ganj",
+  "address2": "",
+  "city": "Delhi",
+  "state": "IND.DL",
+  "county": "National Capital Territory",
+  "postcode": 110002,
+  "lat": 28.64164,
+  "lng": 77.233498,
+  "distance": 2.0079376949738,
+  "logo_url": "https://assets.movieglu.com/chain_logos/in/UK-0-sq.jpg"
+},
+{
+  "_id": {
+    "$oid": "65d32aa857f193b0c59e8ed7"
+  },
+  "cinema_id": 3,
+  "cinema_name": "INOX Eros One",
+  "address": "Eros Cinema Building - Jangpura",
+  "address2": "",
+  "city": "Delhi",
+  "state": "IND.DL",
+  "county": "National Capital Territory",
+  "postcode": 110014,
+  "lat": 28.58124,
+  "lng": 77.242157,
+  "distance": 2.3371527709558,
+  "logo_url": "https://assets.movieglu.com/chain_logos/in/UK-1710-sq.jpg"
+},
+{
+  "_id": {
+    "$oid": "65d32aa857f193b0c59e8ed8"
+  },
+  "cinema_id": 4,
+  "cinema_name": "PVR ECX Chanakyapuri Delhi",
+  "address": "YPCC Mall Yashwat Palace Chanakyapuri",
+  "address2": "",
+  "city": "New Delhi",
+  "state": "IND.DL",
+  "county": "",
+  "postcode": 110021,
+  "lat": 28.58481,
+  "lng": 77.190872,
+  "distance": 3.0010009490262,
+  "logo_url": "https://assets.movieglu.com/chain_logos/in/UK-1718-sq.jpg"
+},
+{
+  "_id": {
+    "$oid": "65d32aa857f193b0c59e8ed9"
+  },
+  "cinema_id": 5,
+  "cinema_name": "Liberty Cinema - Delhi",
+  "address": "19-B New Rohtak Road - Karol Bagh",
+  "address2": "",
+  "city": "Delhi",
+  "state": "IND.DL",
+  "county": "National Capital Territory",
+  "postcode": 110005,
+  "lat": 28.650021,
+  "lng": 77.199966,
+  "distance": 3.097521637417,
+  "logo_url": "https://assets.movieglu.com/chain_logos/in/UK-0-sq.jpg"
+}]

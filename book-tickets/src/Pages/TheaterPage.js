@@ -11,6 +11,7 @@ function TheatrePage() {
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   const title = searchParams.get("title");
+  const poster = searchParams.get("poster");
   useEffect(() => {
     const fetchTheaters = async () => {
       try {
@@ -73,7 +74,7 @@ function TheatrePage() {
                   <p className="card-text">
                     Distance: {theater.distance.toFixed(2)} km
                   </p>
-                  <Link to={`/bookseat?title=${title}&theatreName=${theater.cinema_name}`} className="btn btn-primary">
+                  <Link to={`/bookseat?title=${title}&theatreName=${theater.cinema_name}&poster=${poster}`} className="btn btn-primary">
                     <FaShoppingCart /> Book Seat
                   </Link>
                 </div>

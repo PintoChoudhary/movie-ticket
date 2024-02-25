@@ -90,7 +90,7 @@ function MovieDetailPage() {
                 <p className="card-text"><strong>IMDb Rating:</strong> {imdbRating}</p>
                 <p className="card-text"><strong>IMDb Votes:</strong> {imdbVotes}</p>
                 <div className="d-flex justify-content-center mt-4">
-                  <Link className="btn btn-primary" to={`/theatre?title=${Title}` }>
+                  <Link className="btn btn-primary" to={`/theatre?title=${Title}&poster=${Poster}` }>
                     <FaCartPlus /> Book Tickets
                   </Link>
                 </div>

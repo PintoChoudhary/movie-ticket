@@ -35,10 +35,12 @@ const LoginPage = () => {
                 </p>
                 <Formik
                   initialValues={{
+                    username: '',
                     email: '',
                     password: '',
                   }}
                   validationSchema={Yup.object({
+                    username: Yup.string().required('Username is required'),
                     email: Yup.string()
                       .email('Invalid email address')
                       .required('Email is required'),
@@ -46,13 +48,17 @@ const LoginPage = () => {
                   })}
                   onSubmit={(values, { setSubmitting }) => {
                     axios
-                      .post(`http://127.0.0.1:8000/api/login/`, values)
+                      .post(`http://127.0.0.1:8000/api/login/`, {
+                        email: values.email,
+                        password: values.password,
+                      })
                       .then((response) => {
                         setRequestResponse({
                           textMessage: 'Login successful',
                           alertClass: 'alert alert-success',
                         });
                         localStorage.setItem('token', response.data.access);
+                        localStorage.setItem('username', values.username);
                         setIsLoggedIn(true);
                         setSubmitting(false);
                       })
@@ -68,6 +74,19 @@ const LoginPage = () => {
                   {({ isSubmitting }) => (
                     <Form>
                       <div className="mb-3">
+                        <label htmlFor="username" className="form-label">
+                          Username
+                        </label>
+                        <Field
+                          type="text"
+                          className="form-control"
+                          id="username"
+                          name="username"
+                          placeholder="Enter full name"
+                        />
+                        <ErrorMessage name="username" component="div" className="error-message text-danger" />
+                      </div>
+                      <div className="mb-3">
                         <label htmlFor="email" className="form-label">
                           Email
                         </label>
@@ -76,6 +95,7 @@ const LoginPage = () => {
                           className="form-control"
                           id="email"
                           name="email"
+                          placeholder="Enter your registered email"
                         />
                         <ErrorMessage name="email" component="div" className="error-message text-danger" />
                       </div>
@@ -88,6 +108,7 @@ const LoginPage = () => {
                           className="form-control"
                           id="password"
                           name="password"
+                          placeholder="Enter your password"
                         />
                         <ErrorMessage name="password" component="div" className="error-message text-danger" />
                       </div>

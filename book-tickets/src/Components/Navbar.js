@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { FaSignInAlt, FaSignOutAlt } from "react-icons/fa";
+import { FaSignInAlt, FaSignOutAlt,FaHistory } from "react-icons/fa";
 import { RiMovie2Fill } from "react-icons/ri";
 import { Link } from "react-router-dom";
 
@@ -11,7 +11,7 @@ function Navbar() {
   }, []);
 
   const handleLogout = () => {
-    localStorage.removeItem("token");
+    localStorage.clear();
     setIsLoggedIn(false);
   };
   return (
@@ -57,9 +57,14 @@ function Navbar() {
           </ul>
           <div className="navbar-nav ms-auto">
             {isLoggedIn ? (
+              <div className="navbar-nav ms-auto">
+              <Link className="nav-link mr-1" to="/booking">
+                  <FaHistory /> My Booking
+                </Link>
               <button className="btn btn-danger" onClick={handleLogout}>
                 <FaSignOutAlt /> Logout
               </button>
+            </div>
             ) : (
               <div className="navbar-nav ms-auto">
                 <Link className="nav-link" to="/login">

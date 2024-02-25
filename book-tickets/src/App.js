@@ -11,6 +11,7 @@ import ProtectedRoute from "./route/ProtectedRoute";
 import TheaterPage from "./Pages/TheaterPage";
 import BookSeat from "./Pages/BookSeatPage";
 import CheckOutPage from "./Pages/CheckOutPage";
+import BookingPage from "./Pages/BookingPage";
 function App() {
   return (
     <>
@@ -24,6 +25,7 @@ function App() {
     <Route path="/theatre" element={<ProtectedRoute Component={TheaterPage}/>}/>
     <Route path="/bookseat" element={<ProtectedRoute Component={BookSeat}/>}/>
     <Route path="/checkout" element={<ProtectedRoute Component={CheckOutPage}/>}/>
+    <Route path="/booking" element={<ProtectedRoute Component={BookingPage}/>}/>
     <Route path="/movies/:movieId" element={<ProtectedRoute Component={MovieDetailPage} />} />
     <Route path="/login" element={<LoginPage />} />
     <Route path="/register" element={<RegisterPage />} />

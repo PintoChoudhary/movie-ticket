@@ -14,7 +14,7 @@ function Movies({ movie }) {
       </div>
       <div className="card-footer">
         <div className="d-flex justify-content-center">
-          <Link className="btn btn-primary" to={`/theatre?title=${Title}` }>
+          <Link className="btn btn-primary" to={`/theatre?title=${Title}&poster=${Poster}` }>
             <FaCartPlus /> Book Tickets
           </Link>
         </div>

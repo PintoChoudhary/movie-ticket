@@ -7,6 +7,7 @@ function BookSeat() {
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   const title = searchParams.get("title");
+  const poster = searchParams.get("poster");
   const theatreName = searchParams.get("theatreName");
 
   const [selectedSeats, setSelectedSeats] = useState([]);
@@ -79,7 +80,7 @@ function BookSeat() {
           <p>Selected Seats: {selectedSeats.join(", ")}</p>
           <p>Total Price: ₹{calculateTotalPrice()}</p>
           <Link
-            to={`/checkout?title=${title}&theatreName=${theatreName}&selectedSeats=${selectedSeats.join(", ")}&totalCost=${calculateTotalPrice()}`}
+            to={`/checkout?title=${title}&theatreName=${theatreName}&selectedSeats=${selectedSeats.join(", ")}&totalCost=${calculateTotalPrice()}&poster=${poster}`}
             className="btn btn-primary"
             disabled={selectedSeats.length === 0}
             style={{ pointerEvents: selectedSeats.length === 0 ? "none" : "auto" }}
